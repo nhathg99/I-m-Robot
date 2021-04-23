@@ -1,19 +1,31 @@
+//
+//  main.c
+//  Min max
+//
+//  Created by Nhat on 23/04/2021.
+//
+
 #include <stdio.h>
-#include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int main(){
+    int i,mi,ma,mang[5];
+    printf("Nhap vao mang:");
+    for (i=0; i<5; i++) {
+        scanf("%d",&mang[i]);
+    }
+    int max = mang[0];
+    int min = mang[0];
+    for (i=0; i<5; i++)
+    {
+        if (max < mang[i]) {max = mang[i];}
+        if(min > mang[i])   {min = mang[i];}
+    }
+    mi = 0;
+    ma = 0;
+    for (i=0; i<5; i++) {
+        if (min == mang[i]) { mi+=1;}
+        if (max == mang[i]) {ma+=1;}
+    }
+    printf("Max = %d\nMin = %d\nSo lan hien cua Min:%d\nSo lan hien cua Max:%d\n",max,min,mi,ma);
 
-int main() {
-	int i;
-	char Name[5][30];
-	
-		for(i = 0; i < 5;i++){
-
-		printf("Sinh vien thu %d",i+1);
-		gets(Name[i]);
-		}
-		for(i = 0; i <5;i++){
-		printf("\nHo va ten sinh vien: %s",Name[i]);
-		}
-	
 }
