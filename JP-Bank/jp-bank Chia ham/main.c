@@ -16,17 +16,20 @@ struct taikhoan user;
 void Set_Info(){
     printf("Set for card:\n ");
     printf("\t-Default name: ");
-    fgets(user.name,30,stdin);
+    gets(user.name);
     printf("\tDefault ID: ");
     fflush(stdin);
     scanf("%d",&user.id);
     printf("\tDefault PIN: ");
     fflush(stdin);
     scanf("%d",&user.pin);
+    
+   
 
 }
 int Print_info(){
     char c;
+     
     printf("\t\tWELLCOME TO JP-BANK\n====================================================\n");
     printf("Name : %c\n",user.name);
     printf("ID   : %d\n",user.id);
@@ -41,7 +44,9 @@ int Print_info(){
 
 int check(){
     int pin2,id2;
+     
 //    Select_Lang();
+	printf("--------%c",user.name);
     printf("Nhap Id: ");
     scanf("%d",&id2);
     printf("Nhap PIN: ");
@@ -53,7 +58,8 @@ int check(){
 }
 int menu(){
     int a,b;
-    printf("\t\tWELLCOME TO JP-BANK\n====================================================\n1.Kiểm tra thông tin tài khoản\n2.Rút tiền\n3.Đổi mật khẩu\nSelect:");
+     
+    printf("\t\tWELLCOME TO JP-BANK\n====================================================\n1.Ki?m tra th�ng tin t�i kho?n\n2.R�t ti?n\n3.�?i m?t kh?u\nSelect:");
     scanf("%d",&a);
     switch (a) {
         case 1:
@@ -77,12 +83,13 @@ void main()
     user.sodu = 1000000;
     Set_Info(user);
     do{
+    
     Check = check(user);
     if (Check == 0) {
         a = menu();
         switch (a) {
             case 1:
-                //ktr tt tk
+                Print_info();
                 break;
             case 2:
                 //Rut tien
@@ -92,7 +99,7 @@ void main()
                 break;
         }
     }else if (Check ==1 ){
-        printf("ID hoặc PIN sai, Vui lòng thử lại.\n");
+        printf("ID ho?c PIN sai, Vui l�ng th? l?i.\n");
     }
     }while (Check == 1);
     
@@ -106,3 +113,4 @@ void main()
 //    }
 //    return 2;
 //}
+
