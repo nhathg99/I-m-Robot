@@ -1,0 +1,25 @@
+.navone a:link {
+text-decoration: underline;
+color: #005;
+background: transparent;
+}
+.navone a:visited {
+text-decoration: none;
+color: #FFA500;
+background: transparent;
+}
+.navone a:hover {
+text-decoration: none;
+color: #FFA500;
+background: transparent;
+}
+.navone a:focus {
+text-decoration: none;
+color: #FFA500;
+background: transparent;
+}
+.navone a:active {
+text-decoration: none;
+color: #FFA500;
+background: transparent;
+}

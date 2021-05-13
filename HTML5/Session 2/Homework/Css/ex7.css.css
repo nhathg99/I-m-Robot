@@ -1,0 +1,20 @@
+<style type="text/css">
+   p>a:link {
+   	color: black;
+ 	background-color: orange;
+ 	border: 2px solid white; 
+   }
+   p>a:visited
+	{
+	 color: green;
+	 background-color: green;
+	 border: 2px solid white;
+	}
+   p>a:hover 
+   {
+	 color: black;
+	 background-color: red;
+	 border: 2px solid black;
+	}
+   p>a:active {color: #FF00CC}
+</style>
