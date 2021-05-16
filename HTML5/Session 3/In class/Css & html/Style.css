@@ -1,0 +1,24 @@
+<style type="text/css">
+		body{
+
+			font-family: arial;
+			background-color: rgb(185, 179, 175); 
+		}
+
+		h1{
+			color:red;
+			font-style: italic;
+		}
+
+		p{
+			text-align: left;
+			color: blue;
+			font-style: normal;
+		}
+		h2{
+			font-style: italic;
+			color: purple;
+			text-decoration: overline ;
+		}
+		
+	</style>
