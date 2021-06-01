@@ -4,7 +4,7 @@
 	<title>Images</title>
 	<style type="text/css">
 		body{
-			width: 600px;
+			width: 1000px;
 			margin: 0 auto;
 			/*border:1px solid;*/
 			background-image: url("images 2/backdrop.gif");
@@ -16,11 +16,12 @@
 			padding: 10px;
 		}
 
-		.head p{
+		p{	
+			font-style: italic;
+			font color: #6F5F4E;
 			font-family: monospace;
-			font-size: 20px;
 			text-align: center;
-			margin-bottom: 10px;
+			font-size: 10%;
 		}
 		.container{
 			display: flex;
@@ -28,29 +29,37 @@
 			justify-content: center;
 		}
 		.col1,.col2{
-			width: 170px;
+			width: 250px;
 			height: 200px;
 			border:1px solid;
 			margin:10px;
-			background-color: yellow;
+			background-color: #E7E3D8;
 		}
 		.col1 img{
 			display: block;
-			width: 150px;
+			width: 233px;
 			height: 150px;
 			background-size: cover;
 			background-position: center center;
 			margin:10px auto 0px auto;
+			border: 0.5px groove;
 		}
 		.col2 img{
 			display: block;
-			width: 150px;
+			width: 233px;
 			height: 150px;
 			background-size: cover;
 			background-position: center center;
 			margin:10px auto 0px auto;
+			border: 0.5px groove;
 		}
 		.col1 li{
+			padding-top: 10px;
+			padding-left:  10px;
+			list-style-image: url("images 2/icon.png");
+		}
+
+		.col2 li{
 			padding-top: 10px;
 			padding-left:  10px;
 			list-style-image: url("images 2/icon.png");
@@ -70,25 +79,25 @@
 			</div> 		
 		 <div class="col1">
 		 	<img src="images 2/print-02.jpg">
-			<p>123</p>	
+			<li>123</li>	
 			</div>
 		 <div class="col1">
 		 	<img src="images 2/print-03.jpg">
-			<p>123</p>
+			<li>123</li>
 			</div>
 	</div>
 	<div class=" container">
 		 <div class="col2">
 		 	<img src="images 2/print-04.jpg">
-			<p>123</p>
+			<li>123</li>
 			</div> 		
 		 <div class="col2">
 		 	<img src="images 2/print-05.jpg">
-			<p>123</p>	
+			<li>123</li>	
 			</div>
 		 <div class="col2">
 		 	<img src="images 2/print-06.jpg">
-			<p>123</p>
+			<li>123</li>
 			</div>
 	</div>
 	

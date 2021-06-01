@@ -1,0 +1,66 @@
+		
+
+		body{	
+			background-color: #3c3b40;
+			margin: auto;
+		}
+
+		#head1{
+			width: all;
+			height: 19px;
+			background-color: #282728;
+			
+		}
+		#head2{
+			width: all;
+			height: 30px;
+			background-color:  #37363b;
+		}
+		.logo{
+			width: 50%;
+			height: auto;
+			float: right;
+		}
+		.logo img{
+			margin-left: 100px; 
+		}
+		.search
+		{
+			width: 50%;
+			height: 10px;
+			float: right;
+		}
+		.search form
+		{
+			width: 500px;
+			height: 6px;
+		
+		}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
