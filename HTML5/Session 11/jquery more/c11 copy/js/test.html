@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example ss 7</title>
+</head>
+<body>
+	<form action="Example.com/Example">
+		<!-- =================================================================================================================== -->
+
+		<fieldset id="detail">
+			<legend>Your Detail</legend>
+			<label>
+				<p>Name:
+				<input type="text" name="username" size="15" maxlength="30"  required="required" /></p>
+				<p>Email:
+					<input type="email" name="Email" required="required"></p>
+			</label>
+		</fieldset>
+		<br/>
+		<!-- =================================================================================================================== -->
+
+		<fieldset id="review">
+			<legend>Your Review</legend>
+			<label>
+				<p>How did you hear about us?:
+					<select name="select" size="1" >
+						<option value="Google" selected="selected">Google</option>
+						<option value="Youtube">Youtube</option>
+						<option value="Spotify">Spotify</option>
+						<option value="Zing mp3">Zing mp3</option>
+						<option value="Apple Music">Apple Music</option>
+						<option value="Chiasenhac">Chiasenhac</option>
+					</select>
+				</p>
+				<p>Would you visit again?<br/>
+					<input for="Yes" type="radio" name="visit-again" id="Yes" value="Y" >
+					<label for="Yes">Yes</label>
+					<input type="radio" name="visit-again" id="Yes" value="N">
+					<label for="No">No</label>
+					<input type="radio" name="visit-again" id="Yes" value="Maybe">
+					<label for="Maybe">Maybe</label>
+				</p>
+			</label>
+		<p>
+		Comments:
+		</p>
+		<textarea name="comments" cols="50" rows="5">
+		</textarea>
+		<p>
+		<input type="checkbox" name="service" value="itunes" checked="checked" /> Sign me up for email updates
+		<br/>
+		<input type="Submit" name="submit" value="Submit review" id="review"></p>
+		</fieldset>
+		<!-- =================================================================================================================== -->
+	</form>
+</body>
+</html>

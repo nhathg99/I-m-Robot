@@ -3,11 +3,14 @@ var $current;
 var cache = {};
 var $frame = $('#photo-viewer');
 var $thumb = $('.thumb');
+
+
 function crossfade($img) {
-	// body...
+
 	if($current){
 		$current.stop().fadeOut('slow');
 	}
+
 
 	$img.css({
 		marginLeft: -$img.width() / 2,
