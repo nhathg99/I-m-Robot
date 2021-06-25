@@ -66,13 +66,26 @@
 			margin-left: 20px;
 		}
 
-		#left div{
+		#left article{
 			margin-top: 20px;
 			margin-left: 20px;
 		}
-		#pic1 figure{
-			border: 2px groove;
-			width: 300px;
+		.content h1{
+			font-size: 30px;
+			font-family: monospace;
+			font-style: italic;
+		}
+		.td1{
+			color: grey;
+		}
+		.h1{
+			width: 90%;
+			height: 90%;
+		}
+
+		article figure{
+			float: left;
+			/*width: 30%;*/
 		}
 		#right{
 			width: 35%;
@@ -97,19 +110,22 @@
 			</ul>
 		</div>
 		<div id="left">
-			<div id="pic1"> 
+			<article>
 				<figure>
-					<img src="../yokoimages/images/bok-choi.jpg" width="100%">
-					<figcaption>Bok-Choi</figcaption>
+					<img class="h1" src="../yokoimages/images/bok-choi.jpg" >
+					<figcaption>BokChoi</figcaption>
 				</figure>
-			</div>
-			<div id="pic2">
-				
-			</div>
+				<section class="content">
+					<h1 class="td1">Japanese Vegetarian</h1>
+					<h1 class="td2">Five week course in London</h1>
+					<p>A five week course introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes</p>
+				</section>
+			</article>
 		</div>
 		<div id="right">
 			<p>123</p>
 		</div>
 	</div>
+	<script type="text/javascript" src="bootstrap.js"></script>
 </body>
 </html>
