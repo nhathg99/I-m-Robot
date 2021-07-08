@@ -1,7 +1,7 @@
-create database eShopDatabase
+--create database eShopDatabase
 use eShopDatabase
 GO
-drop table categories
+drop table Categories
 create table Categories
 (	
 	"CategoryID"	int identity(1,1) not null,
@@ -17,7 +17,7 @@ insert into categories(CategoryName,Description) values ('Grains/Cereals','Bread
 insert into categories(CategoryName,Description) values ('Meat/Poultry','Prepared meats')
 insert into categories(CategoryName,Description) values ('Produce','Dried fruit and bean curd')
 insert into categories(CategoryName,Description) values ('Seafood','Seaweed and fish')
-select*from categories
+select*from Categories
 GO
 
 
@@ -224,9 +224,7 @@ create table Employees(
 	"Notes" ntext NULL ,
 	"ReportsTo" int NULL ,
 	"PhotoPath" nvarchar (255) NULL ,
-	CONSTRAINT "PK_Employees" PRIMARY KEY ("EmployeeID"),
-	CONSTRAINT "FK_Employees_Employees" FOREIGN KEY ("ReportsTo") REFERENCES dbo.Employees ("EmployeeID"),
-	CONSTRAINT "CK_Birthdate" CHECK (BirthDate < getdate())
+	constraint fk_
 )
 insert into Employees("LastName","FirstName","Title","TitleOfCourtesy","BirthDate","HireDate","Address","City","Region","PostalCode","Country","HomePhone","Extension","Photo","Notes","PhotoPath") values ('Davolio','Nancy','Sales Representative','Ms.','1948-12-08 00:00:00.000','1992-05-01 00:00:00.000','507 - 20th Ave. E.  Apt. 2A','Seattle','WA','98122','USA','(206) 555-9857','5467','6','7','7')
 insert into Employees("LastName","FirstName","Title","TitleOfCourtesy","BirthDate","HireDate","Address","City","Region","PostalCode","Country","HomePhone","Extension","Photo","Notes","PhotoPath") values ('Fuller','Andrew','Vice President, Sales','Dr.','1952-02-19 00:00:00.000','1992-08-14 00:00:00.000','908 W. Capital Way','Tacoma','WA','98401','USA','(206) 555-9482','3457','6','7','7')
@@ -237,27 +235,36 @@ insert into Employees("LastName","FirstName","Title","TitleOfCourtesy","BirthDat
 insert into Employees("LastName","FirstName","Title","TitleOfCourtesy","BirthDate","HireDate","Address","City","Region","PostalCode","Country","HomePhone","Extension","Photo","Notes","PhotoPath") values ('King','Robert','Sales Representative','Mr.','1960-05-29 00:00:00.000','1994-01-02 00:00:00.000','Edgeham Hollow  Winchester Way','London',NULL,'RG1 9SP','UK','(71) 555-5598','465','6','7','7')
 insert into Employees("LastName","FirstName","Title","TitleOfCourtesy","BirthDate","HireDate","Address","City","Region","PostalCode","Country","HomePhone","Extension","Photo","Notes","PhotoPath") values ('Callahan','Laura','Inside Sales Coordinator','Ms.','1958-01-09 00:00:00.000','1994-03-05 00:00:00.000','4726 - 11th Ave. N.E.','Seattle','WA','98105','USA','(206) 555-1189','2344','6','7','7')
 insert into Employees("LastName","FirstName","Title","TitleOfCourtesy","BirthDate","HireDate","Address","City","Region","PostalCode","Country","HomePhone","Extension","Photo","Notes","PhotoPath") values ('Dodsworth','Anne','Sales Representative','Ms.','1966-01-27 00:00:00.000','1994-11-15 00:00:00.000','7 Houndstooth Rd.','London',NULL,'WG2 7LT','UK','(71) 555-4444','452','6','7','7')
-
 select * from Employees
 
 drop table Products
 create table Products(
 	"ProductID" "int" IDENTITY (1, 1) NOT NULL ,
-	"ProductName" nvarchar (40) NOT NULL ,
-	"SupplierID" "int" NULL ,
-	"CategoryID" "int" NULL ,
-	"QuantityPerUnit" nvarchar (20) NULL ,
-	"UnitPrice" "money" NULL CONSTRAINT "DF_Products_UnitPrice" DEFAULT (0),
-	"UnitsInStock" "smallint" NULL CONSTRAINT "DF_Products_UnitsInStock" DEFAULT (0),
-	"UnitsOnOrder" "smallint" NULL CONSTRAINT "DF_Products_UnitsOnOrder" DEFAULT (0),
-	"ReorderLevel" "smallint" NULL CONSTRAINT "DF_Products_ReorderLevel" DEFAULT (0),
-	"Discontinued" "bit" NOT NULL CONSTRAINT "DF_Products_Discontinued" DEFAULT (0),
+	"ProductName" nvarchar (40)		  NOT NULL ,
+	"SupplierID" "int"				  NULL ,
+	"CategoryID" "int"				  NULL ,
+	"QuantityPerUnit" nvarchar (20)   NULL ,
+	"UnitPrice" "money"				  NULL		 CONSTRAINT "DF_Products_UnitPrice"    DEFAULT(0),
+	"UnitsInStock" "smallint"		  NULL		 CONSTRAINT "DF_Products_UnitsInStock" DEFAULT(0),
+	"UnitsOnOrder" "smallint"		  NULL		 CONSTRAINT "DF_Products_UnitsOnOrder" DEFAULT(0),
+	"ReorderLevel" "smallint"         NULL		 CONSTRAINT "DF_Products_ReorderLevel" DEFAULT(0),
+	"Discontinued" "bit"              NOT NULL   CONSTRAINT "DF_Products_Discontinued" DEFAULT(0),
 	CONSTRAINT "PK_Products" PRIMARY KEY  ("ProductID"),
-	CONSTRAINT "FK_Products_Categories" FOREIGN KEY ("CategoryID") REFERENCES "dbo"."Categories" ("CategoryID"),
-	CONSTRAINT "FK_Products_Suppliers"  FOREIGN KEY ("SupplierID") REFERENCES "dbo"."Suppliers" ("SupplierID"),
+	CONSTRAINT "FK_Products_Categories" FOREIGN KEY ("CategoryID") REFERENCES Categories("CategoryID"),
+	CONSTRAINT "FK_Products_Suppliers"  FOREIGN KEY ("SupplierID") REFERENCES Suppliers ("SupplierID"),
 	CONSTRAINT "CK_Products_UnitPrice" CHECK (UnitPrice >= 0),
 	CONSTRAINT "CK_ReorderLevel" CHECK (ReorderLevel >= 0),
 	CONSTRAINT "CK_UnitsInStock" CHECK (UnitsInStock >= 0),
 	CONSTRAINT "CK_UnitsOnOrder" CHECK (UnitsOnOrder >= 0)
 )
+insert into Products("ProductName","QuantityPerUnit","UnitPrice","UnitsInStock","UnitsOnOrder","ReorderLevel","Discontinued") VALUES('Chai',	'10 boxes x 20 bags',	'18.0000',	'39',	'0',	'10',	'0')
+insert into Products("ProductName","QuantityPerUnit","UnitPrice","UnitsInStock","UnitsOnOrder","ReorderLevel","Discontinued") VALUES('Chang','24 - 12 oz bottles',	'19.0000',	'17',	'40',	'25',	'0')
+insert into Products("ProductName","QuantityPerUnit","UnitPrice","UnitsInStock","UnitsOnOrder","ReorderLevel","Discontinued") VALUES('Aniseed Syrup','12 - 550 ml bottles',	'10.0000',	'13',	'70',	'25',	'0')
+insert into Products("ProductName","QuantityPerUnit","UnitPrice","UnitsInStock","UnitsOnOrder","ReorderLevel","Discontinued") VALUES('Chef Antons Cajun Seasoning','48 - 6 oz jars',	'22.0000',	'53',	'0',	'0',	'0')
+insert into Products("ProductName","QuantityPerUnit","UnitPrice","UnitsInStock","UnitsOnOrder","ReorderLevel","Discontinued") VALUES('Chef Antons Gumbo Mix','36 boxes',	'21.3500',	'0',	'0',	'0',	'1')
+
+insert into Products VALUES(2,	)
+insert into Products VALUES(3,	)
+insert into Products VALUES(4,	)
+insert into Products VALUES(5,	)
 select * from Products

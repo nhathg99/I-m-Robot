@@ -1,5 +1,6 @@
-create database tiki
+--create database tiki
 use tiki
+drop table product
 create table product
 (
 	id char(10),
@@ -8,7 +9,7 @@ create table product
 	status text,
 	qty int
 )
-
+drop table customer
 create table customer
 (
 	cusId char(10),
