@@ -60,9 +60,10 @@ CREATE TABLE Student (
 GO
 
 CREATE TABLE Department (
-	DeptNo INT PRIMARY KEY,
+	DeptNo INT ,
 	DeptName NVARCHAR(50),
-	ManagerName NVARCHAR(30)
+	ManagerName NVARCHAR(30),
+	constraint PK_Department_DeptNo Primary key (DeptNo)
 )
 GO
 
@@ -83,7 +84,39 @@ CREATE TABLE Works_Assign (
 )
 GO
 
-Insert Into Student Values
+Insert Into Student Values (1,N'Nguyen Van Nhat',N'Ha Noi',0912345678),
+						   (2,N'Vu Truong Son',N'Ha Noi',0912345677),
+						   (3,N'Tran Long Vu',N'Ha Noi',0912345676),
+						   (4,N'Nguyen Truong An',N'Ha Noi',0912345675)
+
+
+Insert Into Department Values (11,N'Employees','Nguyen Van A'),
+						      (22,N'Director','Nguyen Van B'),
+						      (33,N'Vice Director','Nguyen Van C'),
+						      (44,N'Employees','Nguyen Van D')
+
+Insert Into Assignment Values (111,N'Giai Tich'),
+						      (222,N'Cau Truc Du Lieu Va Giai Thuat'),
+						      (333,N'Xac Xuat Thong Ke'),
+						      (444,N'Cay Nhi Phan')
+
+Insert Into Works_Assign Values (1111,1,111,90,'Complete'),
+								(1112,1,222,90,'Missing'),
+								(1113,1,333,90,'Complete'),
+								(1114,1,444,90,'Complete'),
+								(2222,2,111,90,'Complete'),
+								(2223,2,222,90,'Missing'),
+								(3333,4,333,90,'Complete'),
+								(3334,4,444,90,'Complete'),
+								(4445,3,222,90,'Missing'),
+								(4446,3,333,90,'Complete')
+---2----
+Create CLustered Index IX_Student On Student(StudentNo) ---??
+---3---
+Alter Index IX_Student On Student REbuild
+---4---
+Create Index IX_Dept On Department(DeptName, ManagerName);
+
 
 
 
