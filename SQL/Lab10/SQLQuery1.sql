@@ -51,5 +51,39 @@ Create Database BTVN
 Use BTVN
 gO
 
+CREATE TABLE Student (
+	StudentNo INT PRIMARY KEY,
+	StudentName NVARCHAR(50),
+	StudentAddress NVARCHAR(100),
+	PhoneNo INT
+)
+GO
+
+CREATE TABLE Department (
+	DeptNo INT PRIMARY KEY,
+	DeptName NVARCHAR(50),
+	ManagerName NVARCHAR(30)
+)
+GO
+
+CREATE TABLE Assignment (
+	AssignmentNo INT PRIMARY KEY,
+	Description NVARCHAR(100)
+)
+GO
+
+CREATE TABLE Works_Assign (
+	JobID INT PRIMARY KEY,
+	StudentNo INT,
+	AssignmentNo INT ,
+	TotalHours INT,
+	JobDetails NVARCHAR(450),
+	CONSTRAINT FK_StudentNo FOREIGN KEY(StudentNo) REFERENCES Student(StudentNo),
+	CONSTRAINT FK_AssignmentNo FOREIGN KEY(AssignmentNo) REFERENCES Assignment(AssignmentNo)
+)
+GO
+
+Insert Into Student Values
+
 
 
