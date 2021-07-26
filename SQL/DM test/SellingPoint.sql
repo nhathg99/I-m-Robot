@@ -31,7 +31,6 @@ INSERT INTO Categories VALUES ('SP001',N'VGA',N'Card Màn Hình'),
 							  ('SP004',N'SSD','Ổ Cứng Lưu Trữ')
 
 INSERT INTO Parts (PartName,CateID,Description,Price,Quantity,Warranty,Photo)
-
 VALUES (N'Option 1','SP001','GTX 1660Ti',80,100,12,null),
 	   (N'Option 2','SP001','GTX 1660 Super',85,200,24,'photo/photo1.png'),
 	   (N'Option 3','SP001','RTX 2060',110,190,12,null),
