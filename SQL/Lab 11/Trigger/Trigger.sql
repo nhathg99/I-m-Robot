@@ -58,12 +58,12 @@ Insert Into Groups Values (111011,'Bitcoin'  ,001,1),
 Go
 Insert Into Project Values  (1,'Project 1' ,'2018-01-01','2018-05-01',4,10000),
 						    (2,'Project 2' ,'2018-02-01','2018-06-01',4,50000),
-							(3,'Project 3' ,'2018-03-01','2018-07-01',4,20000),
+							(3,'Chinh Phu Dien Tu' ,'2018-03-01','2018-07-01',4,20000),
 							(4,'Project 4' ,'2018-04-01','2018-08-01',4,30000),
-							(5,'Project 5' ,'2018-05-01','2018-09-01',4,40000),
+							(5,'Chinh Phu Dien Tu' ,'2018-05-01','2018-09-01',4,40000),
 							(6,'Project 6' ,'2018-06-01','2018-10-01',4,10000),
 							(7,'Project 7' ,'2018-07-01','2018-11-01',4,20000),
-							(8,'Project 8' ,'2018-08-01','2018-12-01',4,60000),
+							(8,'Chinh Phu Dien Tu' ,'2018-08-01','2018-12-01',4,60000),
 							(9,'Project 9' ,'2018-09-01','2018-10-01',1,90000),
 							(10,'Project 10','2018-10-01','2018-12-01',2,15000)
 Go
@@ -84,3 +84,5 @@ ALTER TABLE Groups
 Go
 ALTER TABLE Project 
  Add constraint FK_Groups Foreign key (ProjectID) References Groups(ProjectID);
+ --3--
+ Select EmployeeID, Name, Tel, Email From Employee
