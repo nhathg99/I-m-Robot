@@ -61,11 +61,12 @@ WHERE B.CateID ='SP002';
 CREATE VIEW v_Parts
 AS
 SELECT Parts.PartID, Parts.PartName, Categories.CateName, Parts.Price, Parts.Quantity FROM Parts 
+inner join Categories ON Parts.CateID = Categories.CateID;
 GO
 
 SELECT * FROM v_Parts
 GO
-inner join Categories ON Parts.CateID = Categories.CateID;
+
 --7 Create a view v_TopParts about 5 parts with the most expensive price.
 CREATE VIEW v_TopParts
 AS
